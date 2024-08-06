@@ -1,0 +1,48 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#mainContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#contentContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+#leftPanel {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+#rightPanel {
+    flex: 3;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+#chartControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#chartControls .form-control {
+    margin-right: 10px;
+    width: auto;
+}
+#realtimeChart, #realtimeSensorChart {
+    width: 100%;
+    height: 400px;
+}
+.chartWrapper {
+    flex: 1;
+}

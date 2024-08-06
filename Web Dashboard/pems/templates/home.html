@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEMS</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    
+    <div class="hero">
+      <div class="navbar">
+        <img src="../static/background_pics/logo.png" class="logo">
+        <a type="button" href="{{ url_for('register') }}">Sign Up</a>
+      </div>
+
+      <div class="content">
+        <h2>Welcome to our</h2>
+        <h1>Predictive Emission Monitoring System</h1>
+        <a type="button" href="{{ url_for('login') }}">Sign In</a>
+      </div>
+      <div class="bubbles">
+        <img src="../static/background_pics/bubble.png">
+        <img src="../static/background_pics/bubble.png">
+        <img src="../static/background_pics/bubble.png">
+        <img src="../static/background_pics/bubble.png">
+        <img src="../static/background_pics/bubble.png">
+        <img src="../static/background_pics/bubble.png">
+        
+      </div>
+    </div>
+    
+   
+</body>
+</html>

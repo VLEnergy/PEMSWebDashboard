@@ -1,0 +1,47 @@
+body {
+    background-image: url(../background_pics/background.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-container {
+    background: rgba(255, 255, 255, 0.7); /* Optional: adds a slight white background with opacity */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    position: relative;
+}
+.form-group i {
+    position: absolute;
+    left: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+.form-group input {
+    padding-left: 2.5rem; /* Adjust this value based on the icon size */
+}
+.form-group legend {
+    text-align: center;
+}
+
+.text-muted{
+    color:aliceblue !important;
+}
+
+.form-group-button {
+    text-align: center;
+    margin-top: 1rem; /* Adds space between the confirm password and submit button */
+}
+.form-group-button .btn {
+    width: 100%; /* Ensures the button is centered and takes full width within the container */
+    max-width: 200px; /* Limits the maximum width of the button */
+}

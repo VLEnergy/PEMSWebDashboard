@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block source %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/co2.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <style>
+        #dateRangePicker{
+            margin-top: 100px;
+        }
+      
+        .sensor-card {
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            display: flex;
+            align-items: center;
+        }
+        .card-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .canvas-container {
+            flex: 2;
+        }
+        .sensorName {
+            text-align: center;
+        }
+    
+    </style>
+
+{% endblock source %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <input id="dateRangePicker" class="form-control mb-4" type="text" placeholder="Select Date Range">
+
+    <div class="chart-container mb-4">
+        <div class="card sensor-card card-container" id="sensor1">
+            <div class="card-body">
+                <h4 class="sensorName"><b>Sensor 1</b></h4>
+                <p class="time"></p>
+                <p class="predicted_value"></p>
+                <p class="real_value"></p>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="sensor1Chart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-container mb-4">
+        <div class="card sensor-card card-container" id="sensor2">
+            <div class="card-body">
+                <h4 class="sensorName"><b>Sensor 2</b></h4>
+                <p class="time"></p>
+                <p class="predicted_value"></p>
+                <p class="real_value"></p>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="sensor2Chart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-container mb-4">
+        <div class="card sensor-card card-container" id="sensor3">
+            <div class="card-body">
+                <h4 class="sensorName"><b>Sensor 3</b></h4>
+                <p class="time"></p>
+                <p class="predicted_value"></p>
+                <p class="real_value"></p>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <canvas id="sensor3Chart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/sensorDrift_load.js') }}" async></script>
+{% endblock content %}

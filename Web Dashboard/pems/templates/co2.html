@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block source %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/co2.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+{% endblock source %}
+
+{% block content %}
+<div id="mainContainer" class="container-fluid">
+    <div id="contentContainer">
+        <div id="leftPanel" class="col-md-3">
+            <table id="averagesTable" class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Interval</th>
+                        <th>Average Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Last Minute</td>
+                        <td id="lastMinuteAvg">-</td>
+                    </tr>
+                    <tr>
+                        <td>Last 10 Minutes</td>
+                        <td id="last10MinutesAvg">-</td>
+                    </tr>
+                    <tr>
+                        <td>Last Day</td>
+                        <td id="lastDayAvg">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="rightPanel" class="col-md-9">
+            <div id="chartControls">
+                <input id="dateRangePicker" class="form-control" type="text" placeholder="Select Date Range">
+                <select id="sensorSelect" class="form-control">
+                    <!-- Options will be dynamically populated -->
+                </select>
+            </div>
+            <div class="chartWrapper">
+                <canvas id="realtimeChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <canvas id="realtimeSensorChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/co2_load.js') }}" async></script>
+{% endblock content %}
